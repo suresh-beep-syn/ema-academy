@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMA | Elite Maths Academy</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7ff;
+    color: #172554;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: #101b40;
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #ffd54a, #ff9f1c);
+    display: grid;
+    place-items: center;
+    color: #101b40;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.logo h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.logo p {
+    font-size: 10px;
+    color: #c8d5f4;
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #ffd54a;
+}
+
+.nav-btn {
+    text-decoration: none;
+    background: #ffd54a;
+    color: #101b40;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 500px;
+    padding: 65px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    color: white;
+    background: linear-gradient(-45deg,
+        #101b40,
+        #174b91,
+        #652f9b,
+        #116e8c);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero-text {
+    max-width: 620px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.13);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #ffe27a;
+    margin-bottom: 22px;
+}
+
+.hero h2 {
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero h2 span {
+    color: #ffd54a;
+}
+
+.hero p {
+    color: #e0eaff;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.btn-primary {
+    background: #ffd54a;
+    color: #101b40;
+    padding: 14px 22px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-secondary {
+    border: 1px solid white;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 9px;
+    text-decoration: none;
+}
+
+.hero-art {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffffff, #bcd9ff);
+    display: grid;
+    place-items: center;
+    font-size: 115px;
+    box-shadow: 0 0 60px rgba(255,255,255,0.18);
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* STATS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: white;
+    padding: 25px 5%;
+    box-shadow: 0 5px 25px #dbe5f5;
+}
+
+.stat {
+    text-align: center;
+    padding: 15px;
+    border-right: 1px solid #e3e9f5;
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat h3 {
+    font-size: 25px;
+    color: #2864c5;
+    margin-bottom: 8px;
+}
+
+.stat p {
+    color: #66748e;
+    font-size: 13px;
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+    padding: 70px 6%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-title span {
+    color: #3979db;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    margin: 12px 0;
+}
+
+.section-title p {
+    color: #687791;
+    line-height: 1.7;
+}
+
+/* COURSE CARDS */
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.course-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #e5eaf5;
+    box-shadow: 0 5px 20px rgba(25,50,90,0.04);
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px #d7e5fb;
+}
+
+.course-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #dceaff, #c7d9ff);
+    display: grid;
+    place-items: center;
+    font-size: 27px;
+    margin-bottom: 18px;
+}
+
+.course-card h3 {
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    color: #697791;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.course-card a {
+    display: inline-block;
+    margin-top: 17px;
+    color: #2864c5;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* EXAMS */
+
+.exams {
+    background: linear-gradient(135deg, #eaf1ff, #f1eaff);
+}
+
+.exam-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.exam-card {
+    background: white;
+    padding: 26px 18px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #e3e8f6;
+}
+
+.exam-card:hover {
+    background: #172554;
+    color: white;
+    transform: translateY(-5px);
+}
+
+.exam-card h3 {
+    margin-bottom: 10px;
+}
+
+.exam-card p {
+    color: #71809b;
+    font-size: 13px;
+}
+
+.exam-card:hover p {
+    color: #dbe5ff;
+}
+
+/* LEARNING */
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.learning-card {
+    background: white;
+    border-radius: 17px;
+    padding: 30px;
+    border: 1px solid #e4eaf5;
+    transition: 0.3s;
+}
+
+.learning-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px #dce5f4;
+}
+
+.learning-card h3 {
+    margin-bottom: 12px;
+}
+
+.learning-card p {
+    color: #697791;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* CTA */
+
+.cta {
+    margin: 0 6% 70px;
+    padding: 55px 25px;
+    text-align: center;
+    border-radius: 22px;
+    color: white;
+    background: linear-gradient(120deg, #14254e, #4b2b92, #146c94);
+}
+
+.cta h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    color: #dbe5ff;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #101b40;
+    color: white;
+    padding: 45px 6% 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+}
+
+footer p, footer a {
+    color: #b9c9e5;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+footer a {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+footer a:hover {
+    color: #ffd54a;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #29395a;
+    margin-top: 30px;
+    padding-top: 20px;
+    color: #90a4c5;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 950px) {
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .exam-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .hero-art {
+        width: 230px;
+        height: 230px;
+        font-size: 85px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat:nth-child(2) {
+        border-right: none;
+    }
+
+    .course-grid,
+    .exam-grid,
+    .learning-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
+        font-size: 27px;
+    }
+
+    .hero h2 {
+        font-size: 39px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">E</div>
+        <div>
+            <h1>EMA</h1>
+            <p>ELITE MATHS ACADEMY</p>
+        </div>
+    </div>
+
+    <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#exams">Exams</a>
+        <a href="#study">Study Material</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <a href="#courses" class="nav-btn">Get Started</a>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+        <div class="tag">Welcome to EMA Learning</div>
+
+        <h2>Learn Today.<br><span>Lead Tomorrow.</span></h2>
+
+        <p>
+            Discover quality education, interactive learning,
+            practice tests and structured courses designed
+            to help you achieve your goals.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#courses" class="btn-primary">Explore Courses →</a>
+            <a href="#study" class="btn-secondary">Start Learning</a>
+        </div>
+    </div>
+
+    <div class="hero-art">🎓</div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+    <div class="stat">
+        <h3>6–12</h3>
+        <p>School Classes</p>
+    </div>
+
+    <div class="stat">
+        <h3>JEE</h3>
+        <p>Engineering Preparation</p>
+    </div>
+
+    <div class="stat">
+        <h3>NEET</h3>
+        <p>Medical Preparation</p>
+    </div>
+
+    <div class="stat">
+        <h3>SSC & UPSC</h3>
+        <p>Competitive Exams</p>
+    </div>
+</section>
+
+<!-- COURSES -->
+
+<section class="section" id="courses">
+
+    <div class="section-title">
+        <span>Our Courses</span>
+        <h2>School Education</h2>
+        <p>Choose your class and begin your learning journey.</p>
+    </div>
+
+    <div class="course-grid">
+
+        <div class="course-card">
+            <div class="course-icon">📘</div>
+            <h3>Class 6</h3>
+            <p>Build a strong foundation with essential concepts.</p>
+            <a href="#">Explore Class 6 →</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-icon">📗</div>
+            <h3>Class 7</h3>
+            <p>Strengthen knowledge and develop learning skills.</p>
+            <a href="#">Explore Class 7 →</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-icon">📙</div>
+            <h3>Class 8</h3>
+            <p>Improve concepts and prepare for advanced subjects.</p>
+            <a href="#">Explore Class 8 →</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-icon">📕</div>
+            <h3>Class 9</h3>
+            <p>Learn, practice and strengthen your academic base.</p>
+            <a href="#">Explore Class 9 →</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-icon">🎯</div>
+            <h3>Class 10</h3>
+            <p>Board preparation with revision and practice.</p>
+            <a href="#">Explore Class 10 →</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-icon">🔬</div>
+            <h3>Class 11</h3>
+            <p>Build strong understanding of core subjects.</p>
+            <a href="#">Explore Class 11 →</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-icon">🏆</div>
+            <h3>Class 12</h3>
+            <p>Prepare for boards and future opportunities.</p>
+            <a href="#">Explore Class 12 →</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-icon">🚀</div>
+            <h3>Foundation</h3>
+            <p>Develop skills for future competitive preparation.</p>
+            <a href="#">Explore Foundation →</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- EXAMS -->
+
+<section class="section exams" id="exams">
+
+    <div class="section-title">
+        <span>Competitive Exams</span>
+        <h2>Prepare for Your Dream</h2>
+        <p>Explore our competitive examination programs.</p>
+    </div>
+
+    <div class="exam-grid">
+
+        <div class="exam-card">
+            <h3>JEE</h3>
+            <p>Engineering Entrance</p>
+        </div>
+
+        <div class="exam-card">
+            <h3>NEET</h3>
+            <p>Medical Entrance</p>
+        </div>
+
+        <div class="exam-card">
+            <h3>SSC CGL</h3>
+            <p>Government Exam</p>
+        </div>
+
+        <div class="exam-card">
+            <h3>SSC CHSL</h3>
+            <p>Government Exam</p>
+        </div>
+
+        <div class="exam-card">
+            <h3>UPSC</h3>
+            <p>Civil Services</p>
+        </div>
+
+        <div class="exam-card">
+            <h3>UPSC CSAT</h3>
+            <p>Aptitude</p>
+        </div>
+
+        <div class="exam-card">
+            <h3>CUET</h3>
+            <p>University Entrance</p>
+        </div>
+
+        <div class="exam-card">
+            <h3>Foundation</h3>
+            <p>Early Preparation</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- STUDY MATERIAL -->
+
+<section class="section" id="study">
+
+    <div class="section-title">
+        <span>Study Resources</span>
+        <h2>Learn Your Way</h2>
+        <p>Learning resources to help you study and practice.</p>
+    </div>
+
+    <div class="learning-grid">
+
+        <div class="learning-card">
+            <div class="course-icon">🎥</div>
+            <h3>Video Lectures</h3>
+            <p>Learn through topic-wise video lessons and explanations.</p>
+        </div>
+
+        <div class="learning-card">
+            <div class="course-icon">📚</div>
+            <h3>Notes & PDFs</h3>
+            <p>Study from organized notes and learning materials.</p>
+        </div>
+
+        <div class="learning-card">
+            <div class="course-icon">📝</div>
+            <h3>Practice & Tests</h3>
+            <p>Test your understanding with quizzes and mock exams.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+    <div class="section-title">
+        <span>About EMA</span>
+        <h2>Education for Everyone</h2>
+        <p>
+            EMA (Elite Maths Academy) aims to bring courses,
+            learning resources, practice and examination
+            preparation together in one digital platform.
+        </p>
+    </div>
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+    <h2>Your Learning Journey Starts Here</h2>
+    <p>Explore courses, practice questions and work toward your goals.</p>
+    <a href="#courses" class="btn-primary">Explore EMA Courses →</a>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="footer-grid">
+
+        <div>
+            <h3>EMA — Elite Maths Academy</h3>
+            <p>Learn. Practice. Achieve.</p>
+            <p>A digital platform for education and exam preparation.</p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#exams">Exams</a>
+            <a href="#study">Study Material</a>
+        </div>
+
+        <div>
+            <h3>Programs</h3>
+            <a href="#courses">Classes 6–12</a>
+            <a href="#exams">JEE / NEET</a>
+            <a href="#exams">SSC</a>
+            <a href="#exams">UPSC / CUET</a>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <p>EMA Learning Platform</p>
+            <p>Contact details coming soon</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 EMA Elite Maths Academy. All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>
