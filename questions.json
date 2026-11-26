@@ -1,0 +1,32 @@
+[
+  {
+    "question": "What is the capital of India?",
+    "options": [
+      "Mumbai",
+      "New Delhi",
+      "Kolkata",
+      "Chennai"
+    ],
+    "answer": "New Delhi",
+    "explanation": "New Delhi is the capital of India and the seat of the Government of India.",
+    "question_time": 10,
+    "options_time": 10,
+    "answer_time": 5,
+    "explanation_time": 20
+  },
+  {
+    "question": "Which planet is known as the Red Planet?",
+    "options": [
+      "Venus",
+      "Jupiter",
+      "Mars",
+      "Saturn"
+    ],
+    "answer": "Mars",
+    "explanation": "Mars is called the Red Planet because iron minerals on its surface give it a reddish appearance.",
+    "question_time": 10,
+    "options_time": 10,
+    "answer_time": 5,
+    "explanation_time": 20
+  }
+]
